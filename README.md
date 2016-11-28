@@ -16,6 +16,5 @@ func main() {
 	}
 
 	rand.Seed(seed)
-
 }
 ```
