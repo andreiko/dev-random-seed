@@ -1,8 +1,8 @@
 package dev_random_seed
 
 import (
-	"os"
 	"fmt"
+	"os"
 )
 
 const Filename = "/dev/random"
@@ -26,7 +26,7 @@ func GetSeed() (int64, error) {
 
 	var result int64
 	for i, v := range bytes {
-		result += int64(v) << uint(8 * i)
+		result += int64(v) << uint(8*i)
 	}
 
 	return result, nil
