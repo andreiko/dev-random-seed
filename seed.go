@@ -3,6 +3,7 @@ package dev_random_seed
 import (
 	"fmt"
 	"os"
+	"math/rand"
 )
 
 const Filename = "/dev/random"
@@ -30,4 +31,13 @@ func GetSeed() (int64, error) {
 	}
 
 	return result, nil
+}
+
+func GetRand() (*rand.Rand, error) {
+	seed, err := GetSeed()
+	if err != nil {
+		return nil, err
+	}
+
+	return rand.New(rand.NewSource(seed)), nil
 }

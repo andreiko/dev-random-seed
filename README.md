@@ -5,16 +5,16 @@ Usage example:
 package main
 
 import (
-	"math/rand"
+	"fmt"
 	"github.com/andreiko/dev-random-seed"
 )
 
 func main() {
-	seed, err := dev_random_seed.GetSeed()
+	r, err := dev_random_seed.GetRand()
 	if err != nil {
 		panic(err.Error())
 	}
 
-	rand.Seed(seed)
+	fmt.Println(r.Intn(1000))
 }
 ```
